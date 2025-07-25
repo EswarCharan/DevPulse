@@ -1,0 +1,31 @@
+package com.DevPulse.Authenticartion.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.DevPulse.Authenticartion.Entity.Organisation;
+import com.DevPulse.Authenticartion.Service.OrganisationService;
+
+@RestController
+//@RequestMapping
+public class OrganisationController {
+
+	@Autowired
+	OrganisationService orgService;
+	@PostMapping("/create")
+	public ResponseEntity<Organisation> create(@RequestBody Organisation org){
+		return ResponseEntity.ok(orgService.createOrg(org));
+	}
+	   @GetMapping("/getAll")
+	    public ResponseEntity<List<Organisation>> getAll() {
+	        return ResponseEntity.ok(orgService.getAllOrgs());
+	    }
+}
