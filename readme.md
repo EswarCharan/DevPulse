@@ -31,11 +31,15 @@ This microservice handles user authentication and authorization using **JWT toke
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `POST` | `/auth/org/create` | Register a new organization |
-| `POST` | `/auth/signup` | Register a new user (e.g., employee) |
+| `POST` | `/create` | Register a new organization |
+| `POST` | `/user/register` | Register a new user (e.g., employee) |
 | `POST` | `/auth/login` | Authenticate user and issue JWT |
 | `POST` | `/auth/make_manager/{id}` | Promote employee with given ID to manager |
-| `GET` | `/auth/user/{id}` | Get user information by ID |
+| `GET` | `/user/{id}/users` | Get user information by ID |
+| `GET` | `/user/getAll` | Get all users |
+| `GET` | `/getAll` | Get All Organisations|
+| `PUT` | `/user/{id}/update` | Update user information by ID |
+| `DELETE` | `/user/delete/{id}` | Delete user by ID |
 | `POST` | `/auth/token/validate` | Validate an existing JWT (token introspection) |
 
 ---
